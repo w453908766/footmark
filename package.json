@@ -1,0 +1,23 @@
+{
+  "version": "0.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "12.12.54",
+    "@types/react": "16.9.43",
+    "@types/react-dom": "16.9.8",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "ts-loader": "4.4.2",
+    "typescript": "3.0.1"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.43",
+    "@types/react-dom": "^16.9.8"
+  },
+  "main": "lib/main.js",
+  "scripts": {
+    "build": "npx tsc && browserify --debug --extension=js -o footmark.js lib/main.js",
+    "watch": "npx tsc --watch",
+    "format": "npx prettier src --write"
+  }
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>测试页面</title>
+    <link href="styles/style.css" rel="stylesheet" />
+    <link
+      href="https://fonts.font.im/css?family=Open+Sans"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+  <body>
+    <script>
+      window.onload = function () {};
+      var df = document.createDocumentFragment();
+      for (var i = 0; i < 100; i++) {
+          var p = document.createElement("p");
+          p.appendChild(document.createTextNode(" Line " + i));
+          df.appendChild(p);
+      }
+      document.body.appendChild(df);
+    </script>
+    <script src="footmark.js" defer></script>
+  </body>
+</html>
