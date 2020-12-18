@@ -1,12 +1,12 @@
 {
   "name": "footmark",
   "version": "0.1.0",
-  "manifest_version":2,
+  "manifest_version": 2,
   "description": "leave comments on any page",
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["footmark.js"]
+      "js": ["frame.js"]
     }
   ],
   "permissions": [

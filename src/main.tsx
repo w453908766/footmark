@@ -40,17 +40,10 @@ function SideBar() {
   }, []);
 
   return (
-    <div
-      style={{ position: "fixed", right: "240px", top: "0px", bottom: "0px" }}
-    >
+    <div>
       {state === "finish" ? <CommentBox message={message} /> : state}
       <From send={send} />
     </div>
   );
 }
-
-let div = document.createElement("div");
-
-document.body.appendChild(div);
-
-ReactDOM.render(<SideBar />, div);
+ReactDOM.render(<SideBar />, document.body);

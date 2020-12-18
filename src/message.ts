@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useReducer } from "react";
-import { CommentMsg, fetch_comments } from "./mock";
+import { CommentMsg, fetch_comments } from "./network";
 
 export const EmptyMsg: CommentMsg = { comments: [] };
 
