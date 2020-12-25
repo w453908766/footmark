@@ -32,6 +32,8 @@ type RespMsg struct{
     Comments      []string  `json:"comments"`
 }
 
+// var CommentsMap map[string][]string
+
 func fetchComments(w http.ResponseWriter, r *http.Request) {
 	r.ParseForm()       // 解析参数，默认是不会解析的
 
@@ -39,16 +41,31 @@ func fetchComments(w http.ResponseWriter, r *http.Request) {
 	_ = json.NewDecoder(r.Body).Decode(&req)
 	fmt.Println(req)
 
-	var comments = []string{"aaa","bbb","ccc","ddd","eee"}
+//	comments := CommentsMap[req.Url]
+//	if(req.Comments){
+//	  comments.push(req.Comment)
+//	}
+
+  comments := []string{"aa", "bb", "cc"}
+
 	m := RespMsg{Comments: comments}
 	json.NewEncoder(w).Encode(m)
 
 	fmt.Println()
 }
 
+/*
+func fetchIndex(w http.ResponseWriter, r *http.Request){
+	r.ParseForm()       // 解析参数，默认是不会解析的
+}
+*/
+
 func main() {
 //	http.HandleFunc("/xxx", sayhelloName)       // 设置访问的路由
-  http.Handle("/", http.FileServer(http.Dir(".")))
+	
+//  CommentsMap = make(map[string][]string)
+
+  http.Handle("/", http.FileServer(http.Dir("./page")))
 	http.HandleFunc("/fetch_comments", fetchComments)       // 设置访问的路由
 
 	err := http.ListenAndServe(":1000", nil) // 设置监听的端口

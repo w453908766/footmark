@@ -10,5 +10,5 @@
     "lib": ["dom", "es6"],
     "outDir": "lib"
   },
-  "include": ["src"]
+  "include": ["web", "backend"]
 }

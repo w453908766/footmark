@@ -9,6 +9,9 @@
       "js": ["frame.js"]
     }
   ],
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
   "permissions": [
     "https://*/*",
     "http://*/*",

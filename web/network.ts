@@ -1,12 +1,13 @@
 export type CommentMsg = { comments: string[] };
 
 export async function fetch_comments(msg?: string): Promise<CommentMsg> {
-  console.log("zzzzzzzzzzzzzzz");
+  var searchParams = new URLSearchParams(window.location.search);
+  let url = searchParams.get("url");
 
   const options = {
     method: "POST", // 请求参数
     headers: new Headers({ "Content-Type": "application/json" }), // 设置请求头
-    body: JSON.stringify({ url: document.URL, comment: msg }), // 请求参数
+    body: JSON.stringify({ url: url, comment: msg }), // 请求参数
 
     //  mode: "cors" as RequestMode, // no-cors, cors, *same-origin
   };
@@ -16,7 +17,6 @@ export async function fetch_comments(msg?: string): Promise<CommentMsg> {
       return response.json();
     })
     .then(function (comments) {
-      console.log("xxxxxxxxxxxxxxxxxxxx");
       console.log(comments);
       return comments;
     })

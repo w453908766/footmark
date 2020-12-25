@@ -18,7 +18,8 @@
 // }
 
 let frame = document.createElement("iframe");
-frame.src = "http://127.0.0.1:1000";
+document.body.appendChild(frame);
+
 frame.style.position = "fixed";
 
 frame.style.height = "100%";
@@ -28,4 +29,8 @@ frame.style.right = "0px";
 frame.style.top = "0px";
 frame.style.bottom = "0px";
 
-document.body.appendChild(frame);
+let url = new URL("http://127.0.0.1:1000");
+
+url.searchParams.set("url", window.location);
+
+frame.src = url.href;
